@@ -17,9 +17,11 @@ class TasksController extends Controller
      */
     public function index()
     {
+        $tasks = Task::all();
         
-        
-        return view('tasks.index');
+        return view('tasks.index',[
+            'index_tasks' => $tasks,
+            ]);
     }
 
     /**
@@ -29,7 +31,11 @@ class TasksController extends Controller
      */
     public function create()
     {
-        //
+        $task = new Task;
+        
+        return view('tasks.create',[
+            'new_task' => $task,
+            ]);
     }
 
     /**
@@ -40,7 +46,11 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $task = newTask;
+        $task -> content = $request->content;
+        $task->save();
+        
+        return redirect('/');
     }
 
     /**
@@ -51,7 +61,11 @@ class TasksController extends Controller
      */
     public function show($id)
     {
-        //
+        $task = Task::find($id);
+        
+        return view('tasks.show',[
+            'show_task' => $task,
+            ]);
     }
 
     /**
@@ -62,7 +76,11 @@ class TasksController extends Controller
      */
     public function edit($id)
     {
-        //
+        $task = Task::find($id);
+        
+        return view('tasks.edit',[
+            'edit_task' => $task,
+            ]);
     }
 
     /**
@@ -74,7 +92,11 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $task = Task::find($id);
+        $task->content = $request->content;
+        $task->save();
+        
+        return redirect('/');
     }
 
     /**
@@ -85,6 +107,9 @@ class TasksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task = Task::find($id);
+        $task->destroy();
+        
+        return redirect('/');
     }
 }
