@@ -13,6 +13,7 @@
             </div><!--/navbar-header-->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    
                     <li>{!! link_to_route('tasks.create','新規タスク追加') !!}</li>
                 </ul>
             </div>
