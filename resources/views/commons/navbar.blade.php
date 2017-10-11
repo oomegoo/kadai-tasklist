@@ -13,8 +13,12 @@
             </div><!--/navbar-header-->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    
+                    <!--ログイン前-->
+                    <li>{!! link_to_route('singup.get','Singup') !!}</li>
+                    <li><a href="#">Login</a></li>
+                    <!--ログイン後-->
                     <li>{!! link_to_route('tasks.create','新規タスク追加') !!}</li>
+                    <li>logout</li>
                 </ul>
             </div>
         </div>

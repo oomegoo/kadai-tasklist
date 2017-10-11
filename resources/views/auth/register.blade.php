@@ -5,7 +5,7 @@
     </div>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            {!! Fom::open(['route' => 'signup.post']) !!}
+            {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">
                     {!! Form::label('name','Name') !!}
                     {!! Form::text('name',old('name'),['class' => 'form-control']) !!}
