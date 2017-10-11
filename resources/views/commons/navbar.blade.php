@@ -19,7 +19,7 @@
                         <li>{!! link_to_route('logout.get','ログアウト') !!}</li>
                     @else
                     <!--ログイン前-->
-                        <li>{!! link_to_route('singup.get','Singup') !!}</li>
+                        <li>{!! link_to_route('signup.get','Signup') !!}</li>
                         <li>{!! link_to_route('login.get','Login') !!}</a></li>
                     @endif
                 </ul>
