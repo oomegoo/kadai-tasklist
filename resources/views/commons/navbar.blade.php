@@ -13,12 +13,15 @@
             </div><!--/navbar-header-->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    @if(Auth::check())
+                        <!--ログイン後-->
+                        <li>{!! link_to_route('tasks.create','新規タスク追加') !!}</li>
+                        <li>{!! link_to_route('logout.get','ログアウト') !!}</li>
+                    @else
                     <!--ログイン前-->
-                    <li>{!! link_to_route('singup.get','Singup') !!}</li>
-                    <li><a href="#">Login</a></li>
-                    <!--ログイン後-->
-                    <li>{!! link_to_route('tasks.create','新規タスク追加') !!}</li>
-                    <li>logout</li>
+                        <li>{!! link_to_route('singup.get','Singup') !!}</li>
+                        <li>{!! link_to_route('login.get','Login') !!}</a></li>
+                    @endif
                 </ul>
             </div>
         </div>
