@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
-    <h1>タスク管理一覧</h1>
+    <?php $user = Auth::user(); ?>
+        <h1>{{ $user->name }}：タスク管理一覧</h1>
+    
     @if(count($index_tasks) > 0)
         <table class="table table-striped">
             <thead>
