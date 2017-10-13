@@ -10,8 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-//初期ページ：welcome
-Route::get('/','WelcomeController@index');
+//初期ページ
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::get('/','TasksController@index');
 //ユーザー登録
 Route::get('signup','Auth\AuthController@getRegister')->name('signup.get');
 Route::post('signup','Auth\AuthController@postRegister')->name('signup.post');

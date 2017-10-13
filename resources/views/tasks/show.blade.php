@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
-    <h1>id = {{ $show_task->id }}の詳細ページ</h1>
+    <h1>詳細ページ</h1>
     <table class="table table-bordered">
         <tr>
             <th>id</th>
@@ -22,4 +21,5 @@
     {!! Form::model($show_task,['route'=>['tasks.destroy',$show_task->id],'method'=>'delete']) !!}
         {!! Form::submit('削除',['class'=>'btn btn-danger']) !!}
     {!! Form::close() !!}
+    {!! $users->render() !!}
 @endsection
