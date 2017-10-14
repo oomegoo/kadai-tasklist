@@ -21,5 +21,4 @@
     {!! Form::model($show_task,['route'=>['tasks.destroy',$show_task->id],'method'=>'delete']) !!}
         {!! Form::submit('削除',['class'=>'btn btn-danger']) !!}
     {!! Form::close() !!}
-    {!! $users->render() !!}
 @endsection
